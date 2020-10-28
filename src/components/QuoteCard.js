@@ -16,7 +16,7 @@ const QuoteCard = ({ quote, character, image }) => {
                 </blockquote>
                 <p>
                     <cite>{character.firstName} {character.lastName}</cite>
-                    <span className={favorite ? "is-favorite" : ""} onClick={() => { setFavorite(!favorite) }}>&#9733;</span>
+                    <span onClick={() => { setFavorite(!favorite) }} className={favorite ? "is-favorite" : ""}>&#9733;</span>
                 </p>
             </figcaption>
         </figure>
@@ -24,7 +24,7 @@ const QuoteCard = ({ quote, character, image }) => {
 }
 
 QuoteCard.propTypes = {
-    image: PropTypes.string.isRequired,
+    quote: PropTypes.string.isRequired,
     // firstName: PropTypes.string.isRequired,
     // lastName: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired
