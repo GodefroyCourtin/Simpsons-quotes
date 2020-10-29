@@ -3,19 +3,19 @@ import './QuoteCard.css';
 import PropTypes from 'prop-types';
 
 
-const QuoteCard = ({ quote, character, image }) => {
+const QuoteCard = ({ quote }) => {
     const [favorite, setFavorite] = useState(false);
 
 
     return (
         <figure className="QuoteCard">
-            <img src={image} alt={character.firstName} />
+            <img src={quote.image} alt={quote.character} />
             <figcaption>
                 <blockquote>
-                    {quote}
+                    {quote.quote}
                 </blockquote>
                 <p>
-                    <cite>{character.firstName} {character.lastName}</cite>
+                    <cite>{quote.character}</cite>
                     <span onClick={() => { setFavorite(!favorite) }} className={favorite ? "is-favorite" : ""}>&#9733;</span>
                 </p>
             </figcaption>
@@ -25,8 +25,7 @@ const QuoteCard = ({ quote, character, image }) => {
 
 QuoteCard.propTypes = {
     quote: PropTypes.string.isRequired,
-    // firstName: PropTypes.string.isRequired,
-    // lastName: PropTypes.string.isRequired,
+    // character: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired
 
 };
