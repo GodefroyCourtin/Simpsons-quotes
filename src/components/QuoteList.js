@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import QuoteCard from './QuoteCard';
 import axios from 'axios';
-
+import './QuoteList.css';
 
 const QuoteList = () => {
     const [quotes, setQuotes] = useState([])
@@ -16,7 +16,11 @@ const QuoteList = () => {
     return (
         <div>
             {quotes.map(quote => <QuoteCard key={quote.quote} quote={quote} />)}
-            <button type="button" onClick={getRandomQuote} >Get new quote!</button>
+            <div className="btn">
+                <button className="big-button" type="button" onClick={getRandomQuote} >
+                    New quote!
+            </button>
+            </div>
         </div>
     );
 }

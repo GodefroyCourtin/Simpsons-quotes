@@ -8,8 +8,11 @@
 
 .QuoteForm h3 {
     margin: 0 0 0.5rem 0;
+   
 }
-
+.QuoteForm label {
+    padding: 0.5rem 0;
+}
 .QuoteForm label,
 .QuoteForm input,
 .QuoteForm textarea {
