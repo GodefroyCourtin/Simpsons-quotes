@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './QuoteForm.css'
 
 
-const MAX_LENGTH = 30;
+const MAX_LENGTH = 25;
 
 const QuoteForm = () => {
 

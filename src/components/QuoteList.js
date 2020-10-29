@@ -6,7 +6,7 @@ import './QuoteList.css';
 const QuoteList = () => {
     const [quotes, setQuotes] = useState([])
     const getRandomQuote = async () => {
-        const response = await axios.get('https://thesimpsonsquoteapi.glitch.me/quotes')
+        const response = await axios.get('https://thesimpsonsquoteapi.glitch.me/quotes?count=2')
         setQuotes(response.data)
     }
     useEffect(() => {
@@ -18,7 +18,7 @@ const QuoteList = () => {
             {quotes.map(quote => <QuoteCard key={quote.quote} quote={quote} />)}
             <div className="btn">
                 <button className="big-button" type="button" onClick={getRandomQuote} >
-                    New quote!
+                    New quotes!
             </button>
             </div>
         </div>
