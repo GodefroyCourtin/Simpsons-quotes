@@ -4,7 +4,9 @@ import axios from 'axios';
 import './QuoteList.css';
 
 const QuoteList = () => {
-    const [quotes, setQuotes] = useState([])
+    const [quotes, setQuotes] = useState(null)
+
+
     const getRandomQuote = async () => {
         const response = await axios.get('https://thesimpsonsquoteapi.glitch.me/quotes?count=2')
         setQuotes(response.data)
@@ -13,9 +15,10 @@ const QuoteList = () => {
         getRandomQuote()
     }, [])
 
+
     return (
         <div>
-            {quotes.map(quote => <QuoteCard key={quote.quote} quote={quote} />)}
+            {quotes ? quotes.map(quote => <QuoteCard key={quote.quote} quote={quote} />) : <p>No data yet</p>}
             <div className="btn">
                 <button className="big-button" type="button" onClick={getRandomQuote} >
                     New quotes!
