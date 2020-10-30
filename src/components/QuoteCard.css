@@ -33,3 +33,12 @@
 .QuoteCard figcaption p span.is-favorite {
     color: #c1ac3b;
 }
+
+.no-data-yet {
+    display: flex;
+    padding: 1.25em;
+    width: 400px;
+    font-size: 1.2em;
+
+
+}
